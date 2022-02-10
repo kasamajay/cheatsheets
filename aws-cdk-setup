@@ -5,3 +5,12 @@ Windows 10 PC
    - yarn
    - cdk
    - aws cli
+   
+   
+https://cdkworkshop.com/  (awesome documentation, first steps)
+source code of aws cdk https://github.com/aws/aws-cdk/blob/master/packages/%40aws-cdk/aws-codepipeline/lib/pipeline.ts#L1
+full aws cdk documentation https://docs.aws.amazon.com/cdk/api/v2/
+  - api reference
+  - developer guide
+
+
