@@ -1,0 +1,72 @@
+Windows Developer PC setup
+
+
+Hardward
+16BG to 32GB  RAM
+8CPU to 12CPU 8 core to 12 core CPU 
+ssd harddisk nvm.m2 1TB to 2TB
+wifi
+ethernet port
+
+---
+Windows 10 OS
+----
+
+Browsers: 
+  - Edge(default)
+  - Chrome
+  - Brave
+Text Editors: 
+  - notepad (default)
+  - notepad++
+IDE
+  - visual code studio
+  - intelliJ
+interpreters
+  - java (jdk)
+  - python3
+  - nodejs
+hypervisor
+  - oracle virtualbox
+vm_manager
+  - vagrant
+windows_shells
+  - cmd (default)
+  - powershell (default)
+  - cmdr (linux type terminal for windows filesystem)
+
+wsl
+  - windows subsystem linux (get ubuntu 20.04 distribution)
+  - wsl v1
+  - wsl v2
+
+remote_machine_access
+  - access remote windows using Remote Desktop Connection (default)
+  - ssh from wsl  (CLI)
+  - ssh from cmdr (CLI)
+  - mobaxterm
+  - putty
+  - mputty
+
+----
+On Linux VM  (Centos/ RockyLinux / Almalinux)
+
+container_env
+  - docker (docker daemon and docker cli)
+  - podman (no daemon, just cli)
+  - docker compose
+  
+local_k8s_cluster
+  - microk8s
+  - kind
+
+
+----
+On Linux VM (Ubuntu)
+
+
+
+----
+Cloud
+
+aws account with programatic access
