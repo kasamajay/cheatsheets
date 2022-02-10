@@ -1,0 +1,7 @@
+Windows 10 PC
+ - visual code studio
+ - wsl
+   - nodejs
+   - yarn
+   - cdk
+   - aws cli
