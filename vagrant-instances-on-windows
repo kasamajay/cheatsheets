@@ -1,0 +1,46 @@
+# Prerequisties
+virtual box installed on windows
+vagrant installed on windows
+vagrant -v
+
+# installing ubuntu 20.04
+d:
+cd vagrant-vms
+mkdir ubuntu
+cd ubuntu
+vagrant init bento/ubuntu-20.04
+vagrant up
+
+# installing almalinux 8
+d:
+cd vagrant-vms
+mkdir almalinux
+cd almalinux
+vagrant init almalinux/8
+vagrant up
+
+
+# installing centos 8
+d:
+cd vagrant-vms
+mkdir centos8
+cd centos8
+vagrant init centos/8
+vagrant up
+
+# installing centos 7
+d:
+cd vagrant-vms
+mkdir centos7
+cd centos7
+vagrant init centos/7
+vagrant up
+
+
+# installing rhel 7
+d:
+cd vagrant-vms
+mkdir rhel7
+cd rhel7
+vagrant init rhel/7
+vagrant up
