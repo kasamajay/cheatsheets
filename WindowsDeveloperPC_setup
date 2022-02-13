@@ -34,6 +34,7 @@ windows_shells
   - cmd (default)
   - powershell (default)
   - cmdr (linux type terminal for windows filesystem)
+  - windows terminal (this is good, very similar to terminal from visual code. downloaded from microsoft store, search for windows terminal)
 
 wsl
   - windows subsystem linux (get ubuntu 20.04 distribution)
