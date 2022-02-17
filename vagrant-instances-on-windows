@@ -35,7 +35,17 @@ mkdir centos7
 cd centos7
 vagrant init centos/7
 vagrant up
+vagrant ssh
+#sudo yum install java-11-openjdk
+sudo yum install java-1.8.0-openjdk -y
+sudo yum install epel-release -y
+sudo yum install ansible -y
 
+ANSIBLE_STDOUT_CALLBACK=yaml ansible-playbook pb.yml -v
+
+[defaults]
+# Human-readable output
+stdout_callback = yaml
 
 # installing rhel 7
 d:
