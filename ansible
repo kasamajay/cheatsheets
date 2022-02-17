@@ -11,3 +11,29 @@ cat <<EOF >> ansible.cfg
 stdout_callback = yaml
 EOF
 
+
+cat <<EOF >> pb.yml
+---
+- name: test play
+  hosts: localhost
+  become: true
+  connection: local
+  vars:
+    install_wget:
+
+  tasks:
+  - name: get java version
+    command: java -version
+    register: java_ver
+
+  - name: test var
+    package:
+      state: present
+      name: wget
+    when: install_wget
+
+  - name: print empty var
+    debug:
+      msg: "{{ install_wget }}"
+ EOF
+
