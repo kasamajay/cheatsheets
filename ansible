@@ -1,0 +1,13 @@
+# centos 7
+
+sudo yum install epel-release -y
+sudo yum install ansible -y
+
+ANSIBLE_STDOUT_CALLBACK=yaml ansible-playbook pb.yml -v
+
+cat <<EOF >> ansible.cfg
+[defaults]
+# Human-readable output
+stdout_callback = yaml
+EOF
+
