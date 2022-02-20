@@ -1,6 +1,7 @@
 https://docs.ansible.com/ansible-core/devel/user_guide/playbooks_lookups.html
 ansible-doc -l -t lookup
 https://github.com/ansible/ansible-examples/tree/master/lamp_haproxy
+https://docs.ansible.com/ansible-core/devel/reference_appendices/playbooks_keywords.html#playbook-keywords
 
 # centos 7
 
