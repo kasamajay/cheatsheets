@@ -1,3 +1,6 @@
+https://docs.ansible.com/ansible-core/devel/user_guide/playbooks_lookups.html
+ansible-doc -l -t lookup
+
 # centos 7
 
 sudo yum install epel-release -y
