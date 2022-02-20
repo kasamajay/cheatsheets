@@ -3,6 +3,11 @@ ansible-doc -l -t lookup
 https://github.com/ansible/ansible-examples/tree/master/lamp_haproxy
 https://docs.ansible.com/ansible-core/devel/reference_appendices/playbooks_keywords.html#playbook-keywords
 
+ansible-playbook playbook.yml -f 10 --verbose
+ansible-lint verify-apache.yml
+ansible-doc -t lookup -l
+ansible-doc -t lookup <plugin name>
+
 # centos 7
 
 sudo yum install epel-release -y
