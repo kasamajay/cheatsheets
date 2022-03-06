@@ -1,0 +1,37 @@
+sudo su -
+
+vi /etc/hosts
+#127.0.0.1       jenkins.local.io
+
+exit
+
+mkdir jenkins-setup
+cd jenkins-setup
+
+cat <<-EOF >>site.yml
+- hosts: localhost
+  become: true
+  
+  vars:
+    jenkins_hostname: jenkins.local.io
+    java_packages:
+      - openjdk-8-jdk
+
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkinsvagrant@vagrant:~/jenkins-setup
+EOF
+
+ansible-galaxy install geerlingguy.java
+ansible-galaxy install geerlingguy.jenkins
+
+#check the above ansible roles installed at /home/vagrant/.ansible/roles 
+
+ansible-playbook site.yml
+
+sudo systemctl -l status jenkins
+journalctl -u jenkins
+
+
+#below from the host machine
+browser > localhost:8080 > admin:admin > create admin:admin > install suggested plugins
