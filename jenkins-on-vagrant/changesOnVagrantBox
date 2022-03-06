@@ -19,7 +19,8 @@ cat <<-EOF >>site.yml
 
   roles:
     - role: geerlingguy.java
-    - role: geerlingguy.jenkinsvagrant@vagrant:~/jenkins-setup
+    - role: geerlingguy.jenkins
+    
 EOF
 
 ansible-galaxy install geerlingguy.java
