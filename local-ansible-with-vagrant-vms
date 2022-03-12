@@ -29,7 +29,7 @@ end
 
 2. vagrant ssh ubuntu-vm
    a. sudo su -
-   b. useradd ansible
+   b. useradd -m ansible # userdel ansible for deleting the ansible user, -m option only used on ubuntu
    c. passwd ansible
    d. vi /etc/ssh/sshd_config #enable passwordauthentication
    e. restart sshd service
