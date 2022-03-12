@@ -1,0 +1,32 @@
+Ansible controller VM (in my case vagrant VM ubuntu 18.04)
+
+python3          # mostly exists
+pip for python3  # mostly exists
+venv for python3  
+create python-venv
+activate python-venv
+pip install ansible (pinned or latest based on what version of ansible you want to practice)
+
+Three different options for ansible target machine
+
+1. localhost (this is same VM as ansible controller vm)
+   Note:
+   a. no user setup for ansible target vms
+   b. no ssh setup 
+   c. no setup for ansible target vms
+
+2. remote vm (centos, debian, ubuntu, windows etc)
+   a. remote vms can be vagrant vms
+   b. remote vms can be on aws cloud
+   
+   Note: 
+   a. setup is required on remote vms w.r.t linux user, sudoer for linux user, ssh pub key copy. 
+   b. configure ssh private and linux user in your playbook vars or inventory vars
+   
+ 3. molecule setup, podman setup, so that your role will be run in podman container
+    Note: 
+    a. no user setup, no ssh up
+    b. no pre-provisioning of ansible target vms
+    
+    
+   
