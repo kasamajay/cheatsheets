@@ -1,0 +1,68 @@
+# my ubuntu machine got two python installations python(which is python2), python3
+
+# Every Python should have own pip because 
+# every Python may use different version of the same module 
+# and every Python installs modules in different folder.
+
+
+# note: molecule version 3.6 is not compatible with ansible 2.9.x. 
+# yet to figure out the pinned version for molecule and podman which work with ansible 2.9.27
+
+sudo apt-get install python-pip --yes
+sudo apt-get install python3-pip --yes
+sudo python3 -m pip install pip --upgrade
+# below line fixes the pip install to point to the python2 version instead of the python3 version
+sudo python -m pip install pip --upgrade --force 
+
+sudo apt-get install python3-venv -y
+python3 -m venv .venv
+source .venv/bin/activate
+deactivate
+
+source .venv/bin/activate
+cat <<-EOF >> requirements.yml
+ansible
+testinfra
+molecule
+podman
+python-vagrant
+ansible-lint
+flake8
+molecule[lint]
+molecule[podman]
+EOF
+
+pip3 install -r requirements.yml
+python3 -m pip install --upgrade pip
+pip3 install -r requirements.yml
+molecule --version 
+ansible --version
+
+# deactivate          # optional if the ansible is showing host ansible version rather than python-venv's ansible version
+# source .venv/bin/activate
+cd
+mkdir molecule_setup
+cd molecule_setup
+mkdir roles
+cd roles
+molecule init role test_role --driver-name podman
+cd test_role
+molecule --version
+ansible --version
+molecule converge
+molecule test
+
+(.venv) ➜  test_role molecule --version
+molecule 3.6.1 using python 3.6 
+    ansible:2.11.9
+    delegated:3.6.1 from molecule
+    podman:1.1.0 from molecule_podman requiring collections: containers.podman>=1.7.0 ansible.posix>=1.3.0
+(.venv) ➜  test_role ansible --version
+ansible 2.9.27
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/vagrant/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/dist-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.15+ (default, Nov 27 2018, 23:36:35) [GCC 7.3.0]
+
+
