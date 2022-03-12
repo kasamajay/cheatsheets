@@ -1,0 +1,50 @@
+1. get two ansible target machines with below vagrantfile
+
+Vagrant.configure("2") do |config|
+  config.vm.define "ubuntu-vm" do |vm1|
+    vm1.vm.hostname = "ubuntu-vm"
+    vm1.vm.box = "hashicorp/bionic64"
+    vm1.vm.network "private_network", ip: "192.168.2.33"
+
+    vm1.vm.provider "virtualbox" do |vb|
+      # Customize the amount of memory on the VM:
+      vb.cpus = "2"
+      vb.memory = "4096"
+    end
+  end
+
+  config.vm.define "centos-vm" do |vm2|
+    vm2.vm.hostname = "centos-vm"
+    vm2.vm.box = "bento/centos-7.2"
+
+    vm2.vm.network "private_network", ip: "192.168.2.43"
+
+    vm2.vm.provider "virtualbox" do |vb|
+      # Customize the amount of memory on the VM:
+      vb.cpus = "2"
+      vb.memory = "4096"
+    end
+  end
+end
+
+2. vagrant ssh ubuntu-vm
+   a. sudo su -
+   b. useradd ansible
+   c. passwd ansible
+   d. vi /etc/ssh/sshd_config #enable passwordauthentication
+   e. restart sshd service
+   f. exit from root login
+   g. exit from vm vagrant login
+ 3. from host machine 
+    a. ssh ansible@192.168.2.33 # enter password and verify all good with password login to ubuntu vm
+ 4. repeat 2 & 3 for centos-vm
+ 
+ 
+ ---
+ Question: how about the ansible controller vm, how can we configure the network on ansible controller and ansible targets 
+             such that ansible controller get connectivity to ansible targets??
+             
+ 
+
+  
+   
