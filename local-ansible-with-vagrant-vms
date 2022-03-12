@@ -21,6 +21,8 @@ Note: from ansible controller test connectivity to below ansible targets
       a. ssh ansible@192.168.2.33
       b. ssh ansible@192.168.2.43
       c. ssh password-less connectivity can be setup between ansible controllers and ansible target machines
+      d. EDITOR=vim visudo
+      e. ansible ALL=(ALL:ALL) NOPASSWD:ALL
 
 2. get two ansible target machines with below vagrantfile
 
