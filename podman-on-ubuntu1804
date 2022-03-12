@@ -16,5 +16,6 @@ podman run nginx        # failed
 podman run nginx/nginx  # failed
 echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
 podman run nginx        # success
+docker run --name some-nginx -d -p 8080:80 some-content-nginx
 podman ps
 podman ps -a
