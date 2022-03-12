@@ -1,4 +1,28 @@
-1. get two ansible target machines with below vagrantfile
+1. vagrant vm for ansible controller
+Note: setup visual code > remote explorer > configure ssh config (vagrant ssh-config) > good ide for folders on ansible 
+        controller vm for writing ansible plays, roles etc
+        
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/bionic64"
+
+  config.vm.provision "ansible_local" do |ansible|
+    ansible.playbook = "playbook.yml"
+  end
+  config.vm.network "private_network", ip: "192.168.2.23"
+
+  config.vm.provider "virtualbox" do |vb|
+    # Customize the amount of memory on the VM:
+    vb.cpus = "2"
+    vb.memory = "2048"
+  end
+end
+
+Note: from ansible controller test connectivity to below ansible targets
+      a. ssh ansible@192.168.2.33
+      b. ssh ansible@192.168.2.43
+      c. ssh password-less connectivity can be setup between ansible controllers and ansible target machines
+
+2. get two ansible target machines with below vagrantfile
 
 Vagrant.configure("2") do |config|
   config.vm.define "ubuntu-vm" do |vm1|
