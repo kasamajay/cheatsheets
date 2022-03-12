@@ -20,6 +20,8 @@ source .venv/bin/activate
 deactivate
 
 source .venv/bin/activate
+mkdir molecule_setup
+cd molecule_setup
 cat <<-EOF >> requirements.yml
 ansible
 testinfra
