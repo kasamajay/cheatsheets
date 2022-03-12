@@ -1,0 +1,20 @@
+# i already have docker running on this ubuntu 18.04 vagrant VM
+# https://help.clouding.io/hc/en-us/articles/360011382320-How-to-Install-and-Use-Podman-on-Ubuntu-18-04
+
+sudo apt-get update -y
+sudo apt-get install software-properties-common -y
+sudo add-apt-repository -y ppa:projectatomic/ppa
+sudo apt-get install podman -y
+
+podman info
+
+podman images
+podman ps
+podman ps -a
+
+podman run nginx        # failed
+podman run nginx/nginx  # failed
+echo -e "[registries.search]\nregistries = ['docker.io']" | sudo tee /etc/containers/registries.conf
+podman run nginx        # success
+podman ps
+podman ps -a
