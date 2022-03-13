@@ -7,3 +7,6 @@ permanent agent
 host ip
 username and password (jenkins credentials)
 # make sure that agent (host used as jenkins agent) is having java installed on it
+sudo apt-get install openjdk-11-jdk
+java --version
+
