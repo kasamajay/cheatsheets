@@ -1,0 +1,47 @@
+pulumi.com > sign-in with Github
+pulumi binary on vagrant ubuntu vm (which got aws access and secret key set)
+curl -fsSL https://get.pulumi.com | sh
+pulumi version
+mkdir pulumi-projects
+cd pulumi-projects
+mkdir aws-infra
+
+https://github.com/nodesource/distributions/blob/master/README.md
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+## Run `sudo apt-get install -y nodejs` to install Node.js 17.x and npm
+## You may also need development tools to build native addons:
+     sudo apt-get install gcc g++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+     echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+     sudo apt-get update && sudo apt-get install yarn
+     
+ npm version
+ yarn version
+ 
+ 
+ export AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID> && export AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
+ 
+ 
+ ----
+ curl -fsSL https://get.pulumi.com | sh
+
+pulumi --version
+pulumi version
+mkdir pulumi-projects
+cd pulumi-projects
+mkdir aws-infra
+cd aws-infra
+
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | sudo tee /usr/share/keyrings/yarnkey.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
+npm version
+yarn version
+pulumi new
+tree -I node_modules
