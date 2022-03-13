@@ -1,0 +1,9 @@
+login to jenkins
+manage jenkins
+manage nodes
+new node
+
+permanent agent
+host ip
+username and password (jenkins credentials)
+# make sure that agent (host used as jenkins agent) is having java installed on it
