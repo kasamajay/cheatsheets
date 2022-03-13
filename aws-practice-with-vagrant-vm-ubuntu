@@ -1,0 +1,7 @@
+login to aws console (pre-requisties: root account alias, iam user name, password)
+right top > help ? > documentation 
+documentation > sdks and toolkits > aws cli
+install and update > linux x86 (64 bit)
+aws configure (pre-requistie: iam user secret and access keys)
+aws --version
+aws s3 ls
