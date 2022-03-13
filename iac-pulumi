@@ -58,6 +58,7 @@ cd test
 pulumi new # note to provide pulumi access token (need to create on pulumi.com > profile > settings > access token)
 # check s3 resources in aws console
 pulumi stack output bucketName
+pulumi stack output
 pulumi destroy
 
 # check the pulumi service (pulumi.com > your account (signed-in with github)
