@@ -45,3 +45,20 @@ npm version
 yarn version
 pulumi new
 tree -I node_modules
+pulumi up # note to provide pulumi access token (need to create on pulumi.com > profile > settings > access token)
+# check s3 resources in aws console
+pulumi stack output bucketName
+pulumi destroy
+
+cd ..
+rm -rf aws-infra
+
+mkdir test
+cd test
+pulumi new # note to provide pulumi access token (need to create on pulumi.com > profile > settings > access token)
+# check s3 resources in aws console
+pulumi stack output bucketName
+pulumi destroy
+
+# check the pulumi service (pulumi.com > your account (signed-in with github)
+
