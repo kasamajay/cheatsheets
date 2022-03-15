@@ -6,3 +6,7 @@ Core-based (2 Cores or 4 vCPUs). This is based on the aggregate number of physic
 very detailed: https://access.redhat.com/documentation/en-us/openshift_container_platform/4.9/html/machine_management/creating-infrastructure-machinesets#infrastructure-components_creating-infrastructure-machinesets
 
 good enough: https://docs.openshift.com/container-platform/4.9/machine_management/creating-infrastructure-machinesets.html#machineset-creating_creating-infrastructure-machinesets
+
+$ oc -n openshift-machine-api \
+    -o jsonpath='{.spec.template.spec.providerSpec.value.ami.id}{"\n"}' \
+    get machineset/<infrastructure_id>-worker-us-east-1a
