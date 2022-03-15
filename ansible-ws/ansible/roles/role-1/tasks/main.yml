@@ -1,0 +1,4 @@
+---
+- name: task 1
+  debug:
+    var: k1
