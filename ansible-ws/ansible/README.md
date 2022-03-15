@@ -1,3 +1,4 @@
+```
 └── ansible
     ├── environments
     │   ├── 000_all_vars
@@ -22,3 +23,4 @@
                 └── t1.yml.j2
                 
     ln -s ../../../000_all_vars 000_all_vars
+    ```
