@@ -1,0 +1,20 @@
+tools for diagnosing slow disk problems
+linux check disk io bottleneck
+linux monitor disk io by process
+troubleshooting high iowait linux
+iops io bottleneck
+iostat and iotop
+disk io linux
+linux monitor disk io by process
+linux check disk io bottleneck
+disk i/o is overloaded linux
+how to improve disk io performance in linux
+how to check disk i/o performance in linux
+how to check disk iops in linux
+disk i/o is overloaded linux
+disk utilization linux
+
+lsblk
+top
+iostat -hyxm 1 4 # 1sec interval, 4 iterations
+iotop -o # only linux processes performing the io operations
