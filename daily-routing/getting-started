@@ -1,0 +1,23 @@
+windows login
+e:
+cd ajay
+cd E:\ajay\vagrant_getting_started-clone
+vagrant up
+
+
+vscode > remote explorer > ssh target
+
+activate python venv
+work with terraform
+terraform apply
+
+work with ansible
+ansible
+ansible-playbook
+ansible-inventory
+
+---
+finish your work with
+
+terraform destroy
+vagrant halt
