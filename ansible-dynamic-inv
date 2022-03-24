@@ -1,0 +1,40 @@
+https://docs.ansible.com/ansible/2.9/plugins/inventory/aws_ec2.html
+
+python3 --version
+pip3 --version
+create python venv
+activate venv
+install ansible in venv
+ansible --version
+
+cat <<EOF >> ansible.cfg
+[inventory]
+# enable inventory plugins, default: 'host_list', 'script', 'auto', 'yaml', 'ini', 'toml'
+enable_plugins = host_list, virtualbox, yaml, constructed, ini, auto, aws_ec2
+EOF
+
+cat <<EOF >> aws_ec2.yml
+---
+plugin: aws_ec2
+regions:
+  - eu-west-2
+groups:
+  test: "'test' in tags.Name"
+hostnames:
+  - ip-address
+EOF
+
+create ec2 instance in aws (tag Name: test)
+get the privkey for the ec2 instance
+get the user on the ec2 instance (ec2-user)
+
+copied the privatekey to venv
+chmod 600 privatekey
+
+make sure to have aws cli installed
+get the aws credentials for iam user
+set the aws credentials using aws configure
+aws configure
+check ~/.aws/*
+
+ansible test -i aws_ec2.yml --private-key keyfromsaimachine.pem -u ec2-user -m ping
