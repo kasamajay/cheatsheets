@@ -1,0 +1,66 @@
+download
+https://www.terraform.io/downloads
+terraform -version # verify binary
+
+aws provider
+aws s3 backend
+aws iam user credentials
+
+mkdir terraproject
+cd terraproject
+cat <<EOF >> main.tf
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.27"
+    }
+  }
+
+  required_version = ">= 1.1.0"
+}
+
+provider "aws" {
+  profile = "default"
+  region  = "eu-west-2"
+}
+
+resource "aws_security_group" "sg_ssh" {
+    name = "ssh-from-internet"
+    description = "ssh-from-internet"
+    vpc_id = "vpc-aae9dbc2"
+
+    ingress {
+        description = "ssh from internet"
+        from_port = 22
+        to_port = 22
+        protocol = "tcp"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
+
+    tags = {
+        Name = "ssh-from-internet"
+    }
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-03e88be9ecff64781"
+  instance_type = "t2.micro"
+  key_name = "keyfromsaimachine"
+  security_groups = [ aws_security_group.sg_ssh.name ]
+  tags = {
+    Name = "test"
+  }
+}
+EOF
+
+terraform init
+terraform apply
+terraform destroy
+
