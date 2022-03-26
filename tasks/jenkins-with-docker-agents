@@ -1,1 +1,38 @@
 Youtube > Darin pope 
+
+Jenkins with docker agents
+
+https://github.com/darinpope/jenkins-example-docker
+https://www.jenkins.io/doc/book/pipeline/docker/
+
+how to setup docker containers as build agents for jenkins
+ you been writing jenkins pipelines for a while but you have been 
+ contrained to the tooling that's been available on your agents
+ but its possible that you no longer had to be constrained by specific versions of specific tools on specific agents
+ and that pipeline authors have full control over the tooling 
+ that you are using just by having docker available on your agents
+
+jenkins lts controller 2.289.2, 
+ attached to that controller i have agent with label of linux, on this agent installed docker runtime
+
+jenkins controller > manage jenkins > manage plugins > available > docker pipeline 1.26
+  restart
+  logback into jenkins controller
+  
+Jenkinsfile-1
+pipeline {
+    agent {
+      docker { image 'node:16-alpine' }
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
+}
+
+
+
