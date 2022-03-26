@@ -1,0 +1,6 @@
+How to Use Kubernetes Pods As Jenkins Agents
+Youtube > Darin Pope 
+
+https://gist.github.com/darinpope/67c297b3ccc04c17991b22e1422df45a
+https://plugins.jenkins.io/kubernetes/
+https://kind.sigs.k8s.io/
