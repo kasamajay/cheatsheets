@@ -39,7 +39,7 @@ On Jenkins > create pipeline > Pipeline with scm > git > https://github.com/kasa
 On the VM where jenkins is running > sudo usermod -aG docker jenkins > test with sudo su - jenkins (verify cat /etc/passwd, id jenkins, id vagrant, cat /etc/group)
  > sudo systemctl restart jenkins > systemctl -l status jenkins
 
-
+On Jenkins > Build now > check console logs
 
 
 
