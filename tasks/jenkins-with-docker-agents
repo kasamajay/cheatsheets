@@ -17,7 +17,8 @@ jenkins lts controller 2.289.2,
 
 jenkins controller > manage jenkins > manage plugins > available > docker pipeline 1.26 > download now without restart >
   restart > logback into jenkins controller
-  
+
+https://github.com/kasamajay/hello-world
 Jenkinsfile-1
 pipeline {
     agent {
@@ -32,6 +33,14 @@ pipeline {
         }
     }
 }
+
+On Jenkins > create pipeline > Pipeline with scm > git > https://github.com/kasamajay/hello-world > Jenkinsfile-1 > Build now > check console logs
+
+On the VM where jenkins is running > sudo usermod -aG docker jenkins > test with sudo su - jenkins (verify cat /etc/passwd, id jenkins, id vagrant, cat /etc/group)
+ > sudo systemctl restart jenkins > systemctl -l status jenkins
+
+
+
 
 
 
