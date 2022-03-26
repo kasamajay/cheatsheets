@@ -4,3 +4,23 @@ Youtube > Darin Pope
 https://gist.github.com/darinpope/67c297b3ccc04c17991b22e1422df45a
 https://plugins.jenkins.io/kubernetes/
 https://kind.sigs.k8s.io/
+
+
+kubernetes as jenkins agents
+jenkins controller on VM (vagrant box) (no agents)
+
+kind based k8s cluster on VM (vagrant box)
+
+cat kind-cluster-4-jenkins.yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: ""
+  apiServerPort: 58350
+  
+install kind cli (from kind website or k8s website)
+install kubectl (from k8s website)
+
+create k8s cluster
+
+setup jenkins with kind cluster
