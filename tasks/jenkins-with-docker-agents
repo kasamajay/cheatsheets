@@ -15,9 +15,8 @@ how to setup docker containers as build agents for jenkins
 jenkins lts controller 2.289.2, 
  attached to that controller i have agent with label of linux, on this agent installed docker runtime
 
-jenkins controller > manage jenkins > manage plugins > available > docker pipeline 1.26
-  restart
-  logback into jenkins controller
+jenkins controller > manage jenkins > manage plugins > available > docker pipeline 1.26 > download now without restart >
+  restart > logback into jenkins controller
   
 Jenkinsfile-1
 pipeline {
