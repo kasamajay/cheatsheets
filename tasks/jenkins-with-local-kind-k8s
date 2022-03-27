@@ -24,3 +24,59 @@ install kubectl (from k8s website)
 create k8s cluster
 
 setup jenkins with kind cluster
+
+
+---
+#docker clean up
+
+docker system prune -a -f
+docker volume prune
+
+sudo su -
+systemctl stop docker
+rm -rf /var/lib/docker
+systemctl start docker
+exit
+
+---
+kind delete cluster
+kind create cluster --config kind-cluster-4-jenkins.yaml
+kubectl cluster-info --context kind-kind
+ 1052  kubectl create namespace jenkins
+ 1053  kubectl create sa jenkins --namespace=jenkins 
+ 1054  kubectl create rolebinding jenkins-admin-binding --clusterrole=admin --serviceaccount=jenkins:jenkins --namespace=jenkins
+ 1055  kubectl describe secret $(kubectl describe sa jenkins --namespace jenkins | grep Token | awk '{print $2}') --namespace=jenkins
+ 
+ 
+---
+
+After installing kubernetes-plugin for Jenkins
+
+https://github.com/marcel-dempers/docker-development-youtube-series/blob/master/jenkins/readme.md
+
+Go to Manage Jenkins | Bottom of Page | Cloud | Kubernetes (Add kubenretes cloud)
+Fill out plugin values
+Name: kubernetes
+Kubernetes URL: https://kubernetes.default:443
+Kubernetes Namespace: jenkins
+Credentials | Add | Jenkins (Choose Kubernetes service account option & Global + Save)
+Test Connection | Should be successful! If not, check RBAC permissions and fix it!
+Jenkins URL: http://jenkins
+Tunnel : jenkins:50000
+Apply cap only on alive pods : yes!
+Add Kubernetes Pod Template
+Name: jenkins-slave
+Namespace: jenkins
+Service Account: jenkins
+Labels: jenkins-slave (you will need to use this label on all jobs)
+Containers | Add Template
+Name: jnlp
+Docker Image: aimvector/jenkins-slave
+Command to run :
+Arguments to pass to the command:
+Allocate pseudo-TTY: yes
+Add Volume
+HostPath type
+HostPath: /var/run/docker.sock
+Mount Path: /var/run/docker.sock
+Timeout in seconds for Jenkins connection: 300
