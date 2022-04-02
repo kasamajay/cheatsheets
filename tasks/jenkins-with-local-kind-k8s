@@ -80,3 +80,11 @@ HostPath type
 HostPath: /var/run/docker.sock
 Mount Path: /var/run/docker.sock
 Timeout in seconds for Jenkins connection: 300
+
+---
+https://octopus.com/blog/jenkins-dynamic-build-agents
+
+---
+big learning is
+ - inbound-agents
+ - jenkins controller > manage jenkins > configure global security > agents > tcp port for inbound agents (default its disabled, make it random)
