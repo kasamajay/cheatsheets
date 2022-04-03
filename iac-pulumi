@@ -67,6 +67,7 @@ pulumi destroy
 ---
 creating aws eks for hosting jenkins
 https://www.pulumi.com/docs/guides/crosswalk/aws/eks/
+https://github.com/jenkinsci/helm-charts
 
 alternate method:
   https://www.youtube.com/watch?v=eqOCdNO2Nmk
