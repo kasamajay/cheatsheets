@@ -5,3 +5,9 @@ systemctl services
  - node_exporter
 
 kind k8s cluster
+
+---
+even after deleting the kind cluster, grafana shows high mem and swap usages
+top commands shows tomcat, jenkins, kworker etc
+
+---
