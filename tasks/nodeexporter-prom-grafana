@@ -18,3 +18,15 @@ on grafana > login as admin >
  import node-exporter dashboard
 
 view grafana dashboard for the node metrics
+
+---
+making prometheus and node_exporter as systemctl services
+
+https://www.howtoforge.com/tutorial/how-to-install-prometheus-and-node-exporter-on-centos-8/
+https://docs.vmware.com/en/Management-Packs-for-vRealize-Operations-Manager/1.5.2/kubernetes-solution/GUID-A1B68BE5-EF38-48E1-AA80-FD71E6F19989.html
+
+192.168.2.43 (node exporter 9100, prometheus 9090, grafana 3000)
+192.168.2.33 (node exporter 9100)
+192.168.2.23 (node exporter 9100)
+
+---
