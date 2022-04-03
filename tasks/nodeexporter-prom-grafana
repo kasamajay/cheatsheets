@@ -1,0 +1,20 @@
+download tar of node exporter
+untar
+run the binary (this exposes http://<ip-address-of-vm>:9100)
+
+download tar of prometheus
+untar
+add above one as target in prometheus.yml
+run prometheus binary (this exposes http://ip-address-of-vm>:9090)
+
+download grafana rpm (for centos vm)
+sudo yum install <>.rpm -y
+sudo systemctl daemon-reload
+sudo systemctl enable grafana-server
+sudo systemctl start grafana-server (this exposes http://<ip-address-of-vm>:3000)
+
+on grafana > login as admin > 
+ set datasources > prometheus 
+ import node-exporter dashboard
+
+view grafana dashboard for the node metrics
