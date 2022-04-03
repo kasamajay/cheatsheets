@@ -1,0 +1,4 @@
+systemctl services
+ - node_exporter
+ - prometheus
+ - grafana
