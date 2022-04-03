@@ -63,3 +63,13 @@ pulumi destroy
 
 # check the pulumi service (pulumi.com > your account (signed-in with github)
 
+
+---
+creating aws eks for hosting jenkins
+https://www.pulumi.com/docs/guides/crosswalk/aws/eks/
+
+alternate method:
+  https://www.youtube.com/watch?v=eqOCdNO2Nmk
+  That devops guy > Jenkins on Amazon EKS - The easy way
+how long does it take?
+
