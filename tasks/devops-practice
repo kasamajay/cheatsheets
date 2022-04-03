@@ -1,0 +1,9 @@
+Need each for 8GB , 4vCPU  (8 machines needed)
+ - ansible controller
+ - aws cdk
+ - pulumi
+ - jenkins
+ - tomcat
+ - prometheus + grafana
+ - docker
+ - kind k8s cluster
