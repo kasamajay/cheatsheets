@@ -1,0 +1,7 @@
+whats running on 23_machine
+
+systemctl services
+ - jenkins 
+ - node_exporter
+
+kind k8s cluster
