@@ -2,3 +2,25 @@ new work laptop dell latitude 5320 £1200 (laptopsdirect, account in laptopsdire
  - windows 10 pro
 support for failures from laptopsdirect £8.99 per month
 Antivirus (McAFee trial license, account in McAFee website kasamajay@gmail.com)
+lastpass (subscription, account with lastpass provider, windows gui application, browser extension)
+keepass (windows gui application)
+windows os > enable features > wsl
+windows os > enable features > virtual 
+
+--
+get network-adapter-address or mac-address (hardware-address)
+
+commands:
+ ipconfig /all
+ PS > getmac
+ PS > get-netadapter (most useful)
+ control panel > ncpa.cpl (you get network connections control panel) (note mac-address details)
+ windows search > system information (run as admin) > components > network > adapter > scroll down to realtek (802.3) > MAC address
+ 
+--
+useful windows commands
+
+https://lizardsystems.com/articles/112-windows-run-commands/
+
+ ipconfig /displaydns
+--
