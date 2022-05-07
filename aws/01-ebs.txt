@@ -1,0 +1,21 @@
+aws ec2 and volumes (ebs)
+
+1. new ec2 > add ebs volume
+   format
+   file-system
+   mount
+   use-it
+   
+2. existing ec2 > create new vol > attach to the ec2 (same az)
+   format
+   partitions
+   file-system on disk/partitions
+   mount
+   use-it
+
+3. vol > snapshots
+
+4. vol from snapshot > attach to existing VM
+
+
+   
