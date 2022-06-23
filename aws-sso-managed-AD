@@ -1,0 +1,25 @@
+aws sso
+aws directory services > mananged AD
+aws organizations
+
+aws directory services > mananged AD
+> make sure to have vpc with 2 subnets
+> go for managed microsoft AD 
+> make note of Admin user and Admin password
+> domain name (any private dns name e.g ebsa.local or test.ebsa.local or cc.ebsa.local)
+> when managed AD is ready, it would have 2 dns server addresses make note of them
+
+
+aws ec2 > windows server 2016 base or windows server 2019 base or windows 2019 base > launch in public subnet with 389 port open on security group for rdp sessions
+on windows server machine or windows machine
+initially join with Administrator user and password from keypair private key
+cmd (administrator)
+ipconfig /all (check for dns server configuration, it should be pointing to the aws vpc route53 resolver)
+ncpa.cpl (ipv4 properties > change dns config to managed AD dns servers and finally additional aws vpc route53 resolver)
+add the local pc to domain > sysdm.cpl > change > 
+   add to domain of managed AD ebsa.local or test.ebsa.local or cc.ebsa.local) (need the Admin user and Admin password for the managed AD controller)
+restart PC
+login with managed domain user (or Admin user)
+check for server manager (or otherwise install server manager)
+
+
