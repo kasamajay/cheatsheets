@@ -25,6 +25,15 @@ dig +short google.com
 dig -t soa google.com +short
 dig -t ns google.com +short
 
+dig -x ip-addr +answer +short #reverse lookup ip-address to domain name
+dig -x 192.168.1.1 
+dig -x 192.168.1.1 +short
+dig -x 192.168.1.1 +answer
+
+nslookup -type=ptr ip-address
+nslookup -type=ptr 192.168.1.1
+nslookup 192.168.1.1
+
 nslookup google.com
 nslookup google.com 1.1.1.1
 nslookup -type=soa google.com
