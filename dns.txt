@@ -51,5 +51,5 @@ sudo ifconfig eth0 192.168.1.101 netmask 255.255.255.0
 sudo tail -f /var/log/syslog
 
 dns - hierarchy of domains
-dns - globally distributed system of databases
+dns - globally distributed system of databases, works in conjunction with equally distributed system of authorities
 domain - sphere of influence, governed by entity that exercises authority of that domain, tasked with responsibilities
