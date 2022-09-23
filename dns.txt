@@ -52,4 +52,5 @@ sudo tail -f /var/log/syslog
 
 dns - hierarchy of domains
 dns - globally distributed system of databases, works in conjunction with equally distributed system of authorities
+hierarchy of authority structure complements the hierarchy of name structure
 domain - sphere of influence, governed by entity that exercises authority of that domain, tasked with responsibilities
