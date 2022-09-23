@@ -30,3 +30,5 @@ nslookup google.com 1.1.1.1
 nslookup -type=soa google.com
 nslookup -type=ns google.com
 
+sudo reboot
+sudo shutdown -P now
