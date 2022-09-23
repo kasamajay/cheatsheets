@@ -1,6 +1,19 @@
+
+vagrant plugin install vagrant-vbguest
+vagrant up
+vagrant vbguest
+
+sudo apt-get install virtualbox-guest-additions-iso
+sudo apt-get install build-essential linux-headers-$(uname -r)
+sudo apt-get install virtualbox-guest-utils
+sudo apt-get install virtualbox-guest-dkms
+
+sudo apt install build-essential dkms
+sudo apt update -y && sudo apt install virtual-box-
 sudo apt install bind9 bind9utils -y
 sudo dpkg -s bind9
 cd /etc/bind
 # edit .local file (to add internal zone file)
 # edit .options to add internet domain resolver, either local router 192.168.1.1 or internal public resolver 1.1.1.1
 sudo tcpdump -nni any port 53
+sudo rndc flush
