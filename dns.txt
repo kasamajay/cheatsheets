@@ -32,3 +32,10 @@ nslookup -type=ns google.com
 
 sudo reboot
 sudo shutdown -P now
+
+sudo ifup eth0
+sudo ifdown eth0
+
+sudo ifconfig eth0 new-ip-address netmask 255.255.255.0
+sudo ifconfig eth0 192.168.1.101 netmask 255.255.255.0
+
