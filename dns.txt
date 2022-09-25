@@ -64,3 +64,9 @@ resolvctl (systemd-resolved)
 /etc/resolv.conf
 nameserver <ip-address of upstream dns resolver)
 
+# network links
+ethernet
+wifi
+vpn
+virtualbox 
+
