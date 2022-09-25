@@ -1,0 +1,24 @@
+# most of the packages pre-installed with OS
+# below of the additional packages can be installed using package manager
+
+
+# CPU
+yum/apt install sysstat
+
+
+
+
+
+# Memory
+
+
+
+
+# disk
+yum/apt install iotop
+
+
+
+# network
+# networkd, NetworkManager
+yum/apt install net-tools
