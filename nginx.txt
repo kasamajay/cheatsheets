@@ -75,30 +75,62 @@ nginx -s reload
 
 test from any machine on internet > browser > 18.132.203.153:8080 (http://18.132.203.153:8080 or http://18.132.203.153:8080 )
 ---
+
+
+
 demo of nginx as load balancer /reverse proxy
 
-server 1
+server 1 10.0.1.125 35.178.174.82
 
   nginx 
+  cd /etc/nginx/site-available
+  vi reverse_proxy  
+	  upstream backend {
+		server server-2-ip-addr [down]
+		server server-3-ip-addr [down]
+	  }
+	  
+	  server {
+		 listen 80;
+		 location / {
+			proxy_pass http://backend
+		 }
+	  }
+   cd .. 
+   cd sites-enabled
+   ln -s <target> <link-name>
+   ln -s /etc/nginx/site-available/reverse_proxy reverse_proxy
+   rm -f default
+   rm -f first_portfolio
+   nginx -t
+   nginx -s reload
+   
+
+
+ create nat gateway (in public subnet) (attach elastic ip)
+ edit routes for private subnet
+ 
+ 
+ get copy of cal.pem
+ scp charity zip to server-2
+ ssh into server-2
+ sudo su -
+ apt update -y
+ apt install -y nginx tree unzip
+ 
+ cp charity files /var/www/html
+ nginx -t
+ nginx -s reload
+ 
+till here worked successfully (server-1 reverse_proxy to web server (server-2 charity))
+ 
+ 
+ 
   
-  sites-enabled/default
-  
-  upstream backend {
-    server server-2-ip-addr [down]
-	server server-3-ip-addr
-  }
-  
-  server {
-     location / {
-	    proxy_pass http://backend
-	 }
-  }
-  
-  
-server-2 
+server-2 10.0.138.97
  - charity website
  
-server-3
+server-3 10.0.143.88
  - first_portfolio
  
 
