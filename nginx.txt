@@ -75,3 +75,30 @@ nginx -s reload
 
 test from any machine on internet > browser > 18.132.203.153:8080 (http://18.132.203.153:8080 or http://18.132.203.153:8080 )
 ---
+demo of nginx as load balancer /reverse proxy
+
+server 1
+
+  nginx 
+  
+  sites-enabled/default
+  
+  upstream backend {
+    server server-2-ip-addr [down]
+	server server-3-ip-addr
+  }
+  
+  server {
+     location / {
+	    proxy_pass http://backend
+	 }
+  }
+  
+  
+server-2 
+ - charity website
+ 
+server-3
+ - first_portfolio
+ 
+
