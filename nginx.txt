@@ -1,0 +1,77 @@
+ec2 - Ubuntu machine (public-vm with keypair, sg allow ssh from internet)
+wait for the instance to be fully available (2 to 3mins)
+connect to ec2 using the browser > ec2 console > instance > connect
+sudo su -
+apt update -y
+apt install -y tree
+apt install -y nginx
+systemctl status nginx
+
+cd /etc/nginx
+
+test from any machine on internet > browser > 18.132.203.153 (http://18.132.203.153 or http://18.132.203.153:80 )
+
+cd /etc/nginx/sites-enabled
+vi intellio
+  server {
+     listen 8080;
+  }
+  
+nginx -s reload
+nginx -t
+
+ec2 instance > open 8080 inbound from internet
+test from any machine on internet > browser > 18.132.203.153:8080 (http://18.132.203.153:8080 or http://18.132.203.153:8080 )
+
+
+above is the web-server functionality  ()
+
+
+custom index.html page
+https://templatemo.com/tm-581-kind-heart-charity (download to local windows machine)
+scp -i ~/cal.pem templatemo_581_kind_heart_charity.zip ubuntu@18.132.203.153:/home/ubuntu # copy to the new ec2 instance
+
+apt install unzip -y
+
+cd /var/www/html
+cp /home/ubuntu/temp*.zip .
+unzip temp*.zip
+cp -rf temp*/* .
+rm -rf tem*
+
+
+test from any machine on internet > browser > 18.132.203.153 (http://18.132.203.153 or http://18.132.203.153:80 )
+
+images and other links are not shown properly (need to debug this) - resolved
+
+---
+create another website on the same nginx
+
+cd /var/html
+mkdir first_portfolio
+cd first_portfolio
+cp /home/ubuntu/tem*578*.zip .
+unzip temp*.zip
+cp -rf temp*/* .
+rm -rf tem*
+
+
+cd /etc/nginx
+cd site-available
+cp default first_portfolio
+cd ../sites-enabled
+ln -s /etc/nginx/sites-available/first_portfolio first_portfolio
+ls -l
+
+vi first_portfolio
+
+change 
+ listen port to 8080
+ root /var/www/first_portfolio
+ 
+nginx -t
+nginx -s reload
+
+
+test from any machine on internet > browser > 18.132.203.153:8080 (http://18.132.203.153:8080 or http://18.132.203.153:8080 )
+---
